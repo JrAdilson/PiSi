@@ -1,6 +1,10 @@
 *{
-    background-color: darkorange;
+    background-color: white;
     color: black;
     margin: 0;
     padding: 0;
+    font-family: "Courier New", Courier, monospace;
+}
+.active:hover{
+    color: darkorange !important;
 }

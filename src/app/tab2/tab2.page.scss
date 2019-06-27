@@ -1,1 +1,28 @@
-
+*{
+    font-family: "Courier New", Courier, monospace;
+  }
+body{
+    background-color: black;
+}
+ion-card{
+    background: darkorange;
+}
+ion-card-content{
+    color: white;
+    font-weight: bold !important;
+    text-align: center;
+}
+h2{
+    padding: 0px 0px 0px 10px;
+}
+p{
+    text-align: center;
+    color: white;
+}
+ion-toolbar{
+    --background: darkorange;
+}
+ion-title{
+    color: white;
+    text-align: center;
+}

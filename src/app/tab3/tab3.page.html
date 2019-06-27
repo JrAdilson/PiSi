@@ -1,9 +1,9 @@
-<ion-header>
+<ion-header class="container">
   <ion-toolbar>
     <ion-title>
-      OficinAPP - Contato
+       OficinAPP - Contato
     </ion-title>
-  </ion-toolbar>
+   </ion-toolbar>
 </ion-header>
 
 <ion-content>
@@ -14,10 +14,22 @@
           <ion-input type="text" placeholder="Nome"></ion-input> 
         </ion-item>
         <ion-item>
-          <ion-input type="number" placeholder="Número"></ion-input>
+          <ion-input type="text" name="phone" placeholder="Celular" max-length="12"></ion-input>
         </ion-item>
-        <ion-textarea placeholder="Sugestões, adicionar Oficinas, recomendações e etc..."></ion-textarea>
+        <ion-item class="suspenso">
+           <select name="opcoes">
+              <option value="blank">---</option>
+              <option value="sug">Sugestões</option>
+              <option value="addmec">Adicionar mecânicos</option>
+              <option value="rec">Reclamações</option>
+              </select>
+        </ion-item>
+        <ion-item>
+          <ion-textarea placeholder="Deixe aqui sua mensagem"></ion-textarea>
+        </ion-item>
+        <br>
         <button ion-button block>Enviar</button>
+        
       </ion-list>
     </form>
   </div>

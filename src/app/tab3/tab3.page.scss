@@ -1,1 +1,47 @@
+*{
+    font-family: "Courier New", Courier, monospace;
+  }
+h3{
+    font-size: 15px;
+    text-align: center;
+}
+select{
+    background-color: transparent;
+}
+button{
+    color: white;
+    background-color: darkorange;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+    margin-right: 10px;
+}
+button:active{
+    background-color: darkorange;
+}
+.list{
+    margin-left: 110px;  
+    align-content: center;
+    width: 50%;
 
+}
+ion-textarea{
+    height: 100px;
+}
+ion-item:hover{
+    color: darkorange;
+}
+form:link{
+    color: darkorange;
+}
+ion-toolbar{
+    --background: darkorange;
+}
+ion-title{
+    color: white;
+    text-align: center;
+}
+input{
+    border: solid 1px black;
+    border-radius: 3px;
+}
