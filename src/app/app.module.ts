@@ -10,8 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 
-
-import { BrMaskerModule } from 'brmasker-ionic-3';
 import { FormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -28,8 +26,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule.enablePersistence(),
-    BrMaskerModule,  
+    AngularFirestoreModule.enablePersistence(),   
     IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireAuthModule,

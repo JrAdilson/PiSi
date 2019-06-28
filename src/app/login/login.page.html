@@ -19,8 +19,9 @@
         <ion-input name="password" type="password" [(ngModel)]="formValue.password" required></ion-input>
       </ion-item>
       <ion-button type="submit" color="primary">Entrar</ion-button>
+      <ion-button type="button" size="small" color="medium" [routerLink]="['/conta']">Criar uma conta</ion-button>
     </form>
-    <ion-button type="button" size="small" color="medium" [routerLink]="['/conta']">Criar uma conta</ion-button>
+    
   </div>
   <div class="container" *ngIf="loggedIn">
       <ion-button (click)="logout()">Logout</ion-button>
