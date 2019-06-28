@@ -1,7 +1,7 @@
 <ion-header>
-  <ion-toolbar color="primary">
+  <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button text="" defaultHref="home"></ion-back-button>
+      <ion-back-button defaultHref="home"></ion-back-button>
     </ion-buttons>
     <ion-title>Login</ion-title>
   </ion-toolbar>
@@ -24,6 +24,6 @@
     
   </div>
   <div class="container" *ngIf="loggedIn">
-      <ion-button (click)="logout()">Logout</ion-button>
+      <ion-button [routerLink]="['/conta']">Logout</ion-button>
     </div>
 </ion-content>
