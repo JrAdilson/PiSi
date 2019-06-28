@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,11 +29,11 @@ import { AngularFireModule } from '@angular/fire';
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule.enablePersistence(),
+    BrMaskerModule,  
+    IonicModule.forRoot(),
+    AppRoutingModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule
-    BrMaskerModule,
-    IonicModule.forRoot(),
-    AppRoutingModule
   ],
   providers: [
     StatusBar,

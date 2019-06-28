@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div  class="container" *ngIf="!loggedIn">
+    <form (ngSubmit)="login()">
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input name="email" type="email" [(ngModel)]="formValue.email" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input name="password" type="password" [(ngModel)]="formValue.password" required></ion-input>
+      </ion-item>
+      <ion-button type="submit" color="primary">Entrar</ion-button>
+    </form>
+    <ion-button type="button" size="small" color="medium" [routerLink]="['/conta']">Criar uma conta</ion-button>
+  </div>
+  <div class="container" *ngIf="loggedIn">
+      <ion-button (click)="logout()">Logout</ion-button>
+    </div>
+</ion-content>

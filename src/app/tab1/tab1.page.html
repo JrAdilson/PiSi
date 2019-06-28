@@ -1,30 +1,34 @@
+<ion-content class="container">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-back-button text="" defaultHref="login" icon="people"></ion-back-button>
+      </ion-buttons>
+      <ion-title>
+        OficinAPP - Oficinas
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
 
-  <ion-content  class="container">
-    <ion-header>
-     <ion-toolbar>
-        <ion-title>
-          OficinAPP - Oficinas
-        </ion-title>
-      </ion-toolbar>
-    </ion-header>
-  </ion-content>
 <body>
 
-  <ion-content class="imgfundo">
+  <ion-content class="imgfundo" padding>
     <ion-card>
     </ion-card><br>
     <ion-card [routerLink]="['/oficina1']">
-      <img src="https://i.ibb.co/HCW5P1W/akautocenter.jpg"/>
+      <img src="https://i.ibb.co/HCW5P1W/akautocenter.jpg" />
       <div class="titulo">Oficina AK Auto Center</div>
     </ion-card>
-  
+
     <ion-card [routerLink]="['/oficina2']">
-      <img src="https://abrilquatrorodas.files.wordpress.com/2017/12/seguradora.jpg?quality=70&strip=info&strip=info"/>
+      <img src="https://abrilquatrorodas.files.wordpress.com/2017/12/seguradora.jpg?quality=70&strip=info&strip=info" />
       <div class="titulo">Oficina adilSOM</div>
     </ion-card>
 
     <ion-card [routerLink]="['/oficina3']">
-      <img src="http://www.jclui.com.br/wp-content/uploads/2016/02/oficina-mecanica-veiculos-diesel-em-porto-alegre.jpg"/>
+      <img
+        src="http://www.jclui.com.br/wp-content/uploads/2016/02/oficina-mecanica-veiculos-diesel-em-porto-alegre.jpg" />
       <div class="titulo">Oficina MecaniCar</div>
     </ion-card>
   </ion-content>

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { NavController } from '@ionic/angular';
-import { auth, firestore } from 'firebase';
+import { AngularFirestore } from '@angular/fire/firestore';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'page-home',
@@ -12,10 +13,9 @@ export class HomePage{
 
   constructor(
     private afAuth: AngularFireAuth,
-    private nav: NavController,
-    private db: AngularFirestore
+    private nav: NavController
   ) {}
-
+ 
 
   signUp() {
     const { email, password, confirmPassword } = this.formValue;
@@ -23,11 +23,11 @@ export class HomePage{
       this.afAuth.auth
         .createUserWithEmailAndPassword(email, password)
         .then(response => {
-          this.db.collection('usuarios').doc(response.user.uid).set({ nome: name, admin: false, despensa: [], favoritos: [] });
+          firebase.firestore().collection('usuarios').doc(response.user.uid).set({ nome: name, admin: false, despensa: [], favoritos: [] });
           window.alert('Cadastrado com sucesso');
           this.nav.navigateBack('tab3');
         })
-        .catch(error => window.alert(error.message));
+        .catch(error => window.alert(error.message)); 
     } else {
       window.alert(`As senhas devem ser iguais`);
     }

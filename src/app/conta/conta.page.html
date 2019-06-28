@@ -1,0 +1,46 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button text="" defaultHref="home"></ion-back-button>
+		</ion-buttons>
+		<ion-title>Criar Conta</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<form (ngSubmit)="signUp()">
+		<ion-item>
+			<ion-label position="floating">Digite seu nome</ion-label>
+			<ion-input
+				[(ngModel)]="formValue.name"
+				name="name"
+				type="text"
+			></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label position="floating">Digite seu email</ion-label>
+			<ion-input
+				[(ngModel)]="formValue.email"
+				name="email"
+				type="email"
+			></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label position="floating">Digite sua senha</ion-label>
+			<ion-input
+				[(ngModel)]="formValue.password"
+				name="password"
+				type="password"
+			></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label position="floating">Repita sua senha</ion-label>
+			<ion-input
+				[(ngModel)]="formValue.confirmPassword"
+				name="confirmPassword"
+				type="password"
+			></ion-input>
+		</ion-item>
+		<ion-button type="submit" color="primary">Criar Conta</ion-button>
+	</form>
+</ion-content>

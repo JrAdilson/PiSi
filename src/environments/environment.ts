@@ -5,12 +5,13 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyBZ6sdGayCKY196qzRKCBGsCMiMhuZEUYk-E",
-    authDomain: "projeto-pi-72d64.firebaseapp.com-a3n2.firebaseapp.com",
+    apiKey: "AIzaSyBZ6sdGayCKY196qzRKCBGsCMiMhuZEUYk",
+    authDomain: "projeto-pi-72d64.firebaseapp.com",
     databaseURL: "https://projeto-pi-72d64.firebaseio.com",
     projectId: "projeto-pi-72d64",
     storageBucket: "projeto-pi-72d64.appspot.com",
-    messagingSenderId: "81589937471"
+    messagingSenderId: "815899374713",
+    appId: "1:815899374713:web:d12b1277c6859bc0"
   }
 };
 
