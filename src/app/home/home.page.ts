@@ -5,48 +5,30 @@ import { AngularFireAuth } from 'angularfire2/auth';
   selector: 'page-home',
   templateUrl: 'home.page.html'
 })
-export class HomePage {
-  public user: any;
-  @ViewChild('usuario') email;
-  @ViewChild('senha') password;
-constructor(public navCtrl: NavController,
-              public toastCtrl: ToastController,
-              public firebaseauth: AngularFireAuth) {
-      firebaseauth.user.subscribe((data => {
-        this.user = data;
-      }));     
+export class HomePage implements OnInit{
+  formValue = { email: '', password: '', confirmPassword: '' };
+
+  constructor(
+    private afAuth: AngularFireAuth,
+    private nav: NavController,
+    private db: AngularFirestore
+  ) {}
+
+  ngOnInit() {}
+
+  signUp() {
+    const { email, password, confirmPassword } = this.formValue;
+    if (confirmPassword === password) {
+      this.afAuth.auth
+        .createUserWithEmailAndPassword(email, password)
+        .then(response => {
+          this.db.collection('usuarios').doc(response.user.uid).set({ nome: name, admin: false, despensa: [], favoritos: [] });
+          window.alert('Cadastrado com sucesso');
+          this.nav.navigateBack('tab3');
+        })
+        .catch(error => window.alert(error.message));
+    } else {
+      window.alert(`As senhas devem ser iguais`);
+    }
   }
-public LoginComEmail(): void {
-    this.firebaseauth.auth.signInWithEmailAndPassword(this.email.value , this.password.value)
-      .then(() => {
-        this.exibirToast('Login efetuado com sucesso');
-      })
-      .catch((erro: any) => {
-        this.exibirToast(erro);
-      });
-  }
-public cadastrarUsuario(): void {
-    this.firebaseauth.auth.createUserWithEmailAndPassword(this.email.value , this.password.value)
-    .then(() => {
-      this.exibirToast('Usuário criado com sucesso');
-    })
-    .catch((erro: any) => {
-      this.exibirToast(erro);
-    });
-  }
-public Sair(): void {
-    this.firebaseauth.auth.signOut()
-    .then(() => {
-      this.exibirToast('Você saiu');
-    })
-    .catch((erro: any) => {
-      this.exibirToast(erro);
-    });
-  }
-private exibirToast(mensagem: string): void {
-    let toast = this.toastCtrl.create({duration: 3000, 
-                                    });
-    toast.setMessage(mensagem);
-    toast.present();
-                                  }
 }

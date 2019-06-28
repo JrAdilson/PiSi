@@ -1,38 +1,28 @@
 <ion-header>
-    <ion-navbar  color='primary'>
-      <ion-title>
-        Ionic + Firebase
-      </ion-title>
-    </ion-navbar>
-  </ion-header>
-  <ion-content padding>
-    
-    <div *ngIf="user != null">
-      <h3>Bem vindo: {{ user.email }}</h3>
-      <br>
-      <br>
-      <button ion-button block  (click)="Sair()">Sair</button>
-    </div>
-  <div *ngIf="user == null">
-      <br>
-      <h3>Login / Cadastro</h3>
-      <ion-item>
-        <ion-label floating>
-        <ion-icon name='person'>
-        </ion-icon> Usuário</ion-label>
-        <ion-input type="text" #usuario></ion-input>
-      </ion-item>
-    
-      <ion-item>
-        <ion-label floating>
-        <ion-icon name='lock'>
-        </ion-icon> Senha </ion-label>
-        <ion-input type="password" #senha></ion-input>
-      </ion-item>
-      <br>
-      <button ion-button block
-             (click)="LoginComEmail()">Login</button>
-      <button ion-button block 
-              (click)="cadastrarUsuario()">Cadastrar</button>
-    </div>
-  </ion-content>
+  <ion-navbar color='primary'>
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Ionic + Firebase
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+
+  <form (ngSubmit)="signUp()">
+    <ion-item>
+      <ion-label position="floating">Digite seu email</ion-label>
+      <ion-input [(ngModel)]="formValue.email" name="email" type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Digite sua senha</ion-label>
+      <ion-input [(ngModel)]="formValue.password" name="password" type="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Repita sua senha</ion-label>
+      <ion-input [(ngModel)]="formValue.confirmPassword" name="confirmPassword" type="password"></ion-input>
+    </ion-item>
+    <ion-button type="submit" color="primary">Criar Conta</ion-button>
+  </form>
+</ion-content>
