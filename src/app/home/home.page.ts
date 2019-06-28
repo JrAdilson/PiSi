@@ -1,12 +1,13 @@
-import { Component, ViewChild, OnInit } from '@angular/core';
-import { NavController, ToastController } from '@ionic/angular';
-import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { NavController } from '@ionic/angular';
+import { auth, firestore } from 'firebase';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.page.html'
 })
-export class HomePage implements OnInit{
+export class HomePage{
   formValue = { email: '', password: '', confirmPassword: '' };
 
   constructor(
@@ -15,7 +16,6 @@ export class HomePage implements OnInit{
     private db: AngularFirestore
   ) {}
 
-  ngOnInit() {}
 
   signUp() {
     const { email, password, confirmPassword } = this.formValue;

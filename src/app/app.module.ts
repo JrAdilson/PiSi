@@ -20,13 +20,19 @@ import { AngularFireModule } from '@angular/fire';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  
+
   imports: [BrowserModule,
-    FormsModule, 
-    IonicModule.forRoot(), 
+    FormsModule,
+    IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule.enablePersistence(),BrMaskerModule, IonicModule.forRoot(), AppRoutingModule],
+    AngularFirestoreModule.enablePersistence(),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
+    BrMaskerModule,
+    IonicModule.forRoot(),
+    AppRoutingModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,
@@ -34,4 +40,4 @@ import { AngularFireModule } from '@angular/fire';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
