@@ -8,31 +8,26 @@ h3{
 select{
     background-color: transparent;
 }
-button{
-    color: white;
-    background-color: darkorange;
+ion-button[type="submit"]{
+    color: white ;
+    --background: darkorange;
     border-radius: 5px;
-    padding: 15px;
-    text-align: center;
+    --padding-left: 10px;
+    size: large;
+    text-align: center; 
     margin-right: 10px;
-}
+}   
 button:active{
     background-color: darkorange;
 }
-.list{
+
+ion-list{
     margin-left: 110px;  
     align-content: center;
     width: 50%;
-
 }
 ion-textarea{
     height: 100px;
-}
-ion-item:hover{
-    color: darkorange;
-}
-form:link{
-    color: darkorange;
 }
 ion-toolbar{
     --background: darkorange;
@@ -40,8 +35,4 @@ ion-toolbar{
 ion-title{
     color: white;
     text-align: center;
-}
-input{
-    border: solid 1px black;
-    border-radius: 3px;
 }
